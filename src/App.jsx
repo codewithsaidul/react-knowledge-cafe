@@ -1,5 +1,7 @@
 
 import './App.css'
+import Blogs from './components/blogs/Blogs'
+import Header from './components/header/Header'
 
 function App() {
  
@@ -7,7 +9,8 @@ function App() {
   return (
     <>
     
-      <h1 className='text-5xl text-green-700 font-extrabold'>Vite + React</h1>
+      <Header></Header>
+      <Blogs></Blogs>
       
     </>
   )
