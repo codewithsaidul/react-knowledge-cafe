@@ -9,10 +9,17 @@ function App() {
  
 
   const [bookmarks, setBookmarks] = useState([]);
+  const [time, setTime] = useState(0);
 
   const handleToAddBookmarks = blog => {
     const newBookmark = [...bookmarks, blog];
     setBookmarks(newBookmark)
+  }
+
+  const handleToAddTimes = times => {
+    const newTime = time + times;
+    setTime(newTime);
+    // console.log(newBookmark);
   }
 
   return (
@@ -21,9 +28,12 @@ function App() {
 
       <div className="w-full max-w-[1170px] px-3 mx-auto mt-10">
         <div className=" md:flex gap-10">
-          <Blogs handleToAddBookmarks={handleToAddBookmarks}></Blogs>
+          <Blogs
+            handleToAddBookmarks={handleToAddBookmarks}
+            handleToAddTimes={handleToAddTimes}
+          ></Blogs>
 
-          <Markread bookmarks={bookmarks}></Markread>
+          <Markread time={time} bookmarks={bookmarks}></Markread>
         </div>
       </div>
     </>
